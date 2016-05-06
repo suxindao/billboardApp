@@ -43,8 +43,37 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('MainCtrl', function ($scope, $state) {
-    $scope.data = {};
+  .controller('MainCtrl', function ($scope, $sce) {
+    //http://plnkr.co/edit/nntLVOV58NmXbmB6LcIB?p=preview
+
+    $scope.data = {
+      photos: [
+        {
+          fullres: 'img/thumb-1.jpg',
+          thumbnail: 'img/thumb-1.jpg',
+          message: "aaaa"
+        },
+        {
+          fullres: 'img/thumb-2.jpg',
+          thumbnail: 'img/thumb-2.jpg',
+          message: "bbb"
+        },
+        {
+          fullres: 'img/thumb-3.jpg',
+          thumbnail: 'img/thumb-3.jpg',
+          message: "ccc"
+        },
+        {
+          fullres: 'img/thumb-4.jpg',
+          thumbnail: 'img/thumb-4.jpg',
+          message: "dddd"
+        }
+      ]
+    };
+
+    for (var i = 0; i < $scope.data.photos.length; i++) {
+      $scope.data.photos[i].fullres = $sce.trustAsResourceUrl($scope.data.photos[i].fullres);
+    }
 
   })
 
