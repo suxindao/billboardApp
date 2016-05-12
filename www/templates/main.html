@@ -1,45 +1,22 @@
-<ion-view view-title="主页面" name="main-view">
+<ion-view view-title="主页面" name="main-view" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button class="button" ng-click="userAccount()">
+      用户
+    </button>
+  </ion-nav-buttons>
   <ion-nav-buttons side="right">
-    <button class="button" ng-click="doSomething()">
+    <button class="button" ng-click="showMenu()">
       菜单
     </button>
   </ion-nav-buttons>
   <ion-content class="padding">
-    <div class="demo-gallery">
-      <ul id="lightgallery" class="list-unstyled row">
-        <!--        <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="img/thumb-1.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                  <a href="">
-                    <img class="img-responsive" src="img/thumb-1.jpg">
-                  </a>
-                </li>
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/2-375.jpg 375, img/2-480.jpg 480, img/2.jpg 800" data-src="img/thumb-1.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
-                  <a href="">
-                    <img class="img-responsive" src="img/thumb-2.jpg">
-                  </a>
-                </li>
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/3-375.jpg 375, img/3-480.jpg 480, img/3.jpg 800" data-src="img/thumb-3.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
-                  <a href="">
-                    <img class="img-responsive" src="img/thumb-3.jpg">
-                  </a>
-                </li>
-                <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/4-375.jpg 375, img/4-480.jpg 480, img/4.jpg 800" data-src="img/thumb-4.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
-                  <a href="">
-                    <img class="img-responsive" src="img/thumb-4.jpg">
-                  </a>
-                </li>-->
-        <li lightgallery ng-repeat="photo in data.photos" data-src="{{photo.fullres}}" data-sub-html="{{photo.message}}">
-          <a href="">
-            <img class="img-responsive" src="{{photo.thumbnail}}">
-          </a>
-        </li>
-      </ul>
+    <div class="item">            
+      <div class="clearfix" style="max-width:474px; margin: 0 auto;">
+        <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+          <lightslide ng-repeat="photo in data.photos"/>
+        </ul>
+      </div>
     </div>
   </ion-content>
 </ion-view>
-<!--<script type="text/javascript">
-      $(document).ready(function () {
-        $('#lightgallery').lightGallery({
-          download: false
-        });
-      });
-</script>-->
+

@@ -9793,3 +9793,10 @@ a.button {
   margin: 0 auto;
   width: 200px;
   height: 300px; }
+
+.welcome {
+  /*background-image: url(/img/sample.png);*/
+  background-color: gray; }
+
+.img-responsive {
+  width: 100px; }
