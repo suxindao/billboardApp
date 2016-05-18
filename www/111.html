@@ -5,22 +5,22 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
     <!-- for lightGallery-->
-    <link href="lib/lightgallery/dist/css/lightGallery.css" rel="stylesheet" /> 
-    <!--<script src="lib/jquery/dist/jquery.min.js"></script>-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="lib/lightgallery/dist/css/lightgallery.css" rel="stylesheet" /> 
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
     <!--<script src="https://raw.githack.com/sachinchoolur/lightGallery/1.1.5/light-gallery/js/lightGallery.js"></script>-->
-      <!--<script src="lib/ionic/js/ionic.bundle.js"></script>-->
-      
+
     <script src="lib/lightgallery/dist/js/lightgallery.js"></script>
     <!--<script src="lib/lightgallery/dist/js/lg-fullscreen.js"></script>-->
     <script src="lib/lightgallery/dist/js/lg-thumbnail.js"></script>
-<!--    <script src="lib/lightgallery/dist/js/lg-video.js"></script>
-    <script src="lib/lightgallery/dist/js/lg-autoplay.js"></script>
-    <script src="lib/lightgallery/dist/js/lg-zoom.js"></script>
-    <script src="lib/lightgallery/dist/js/lg-hash.js"></script>
-    <script src="lib/lightgallery/dist/js/lg-pager.js"></script>
-    <script src="lib/lightgallery/lib/jquery.mousewheel.min.js"></script>-->
+    <!--    <script src="lib/lightgallery/dist/js/lg-video.js"></script>
+        <script src="lib/lightgallery/dist/js/lg-autoplay.js"></script>
+        <script src="lib/lightgallery/dist/js/lg-zoom.js"></script>
+        <script src="lib/lightgallery/dist/js/lg-hash.js"></script>
+        <script src="lib/lightgallery/dist/js/lg-pager.js"></script>
+        <script src="lib/lightgallery/lib/jquery.mousewheel.min.js"></script>-->
 
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
 
@@ -31,6 +31,7 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
     <style type="text/css">
       body{
         background-color: #152836
@@ -151,29 +152,30 @@
       }
     </style>
   </head>
-  <body ng-app="starter">
+  <body>
     <div class="demo-gallery">
       <ul id="lightgallery" class="list-unstyled row">
-        <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/1-375.jpg 375, img/1-480.jpg 480, img/1.jpg 800" data-src="img/thumb-1.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+        <li class="col-xs-6 col-sm-4 col-md-3" data-src="img/thumb-1.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
           <a href="">
             <img class="img-responsive" src="img/thumb-1.jpg">
           </a>
         </li>
-        <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/2-375.jpg 375, img/2-480.jpg 480, img/2.jpg 800" data-src="img/thumb-1.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
+        <li class="col-xs-6 col-sm-4 col-md-3" data-src="img/thumb-2.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
           <a href="">
             <img class="img-responsive" src="img/thumb-2.jpg">
           </a>
         </li>
-        <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/3-375.jpg 375, img/3-480.jpg 480, img/3.jpg 800" data-src="img/thumb-3.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
+        <li class="col-xs-6 col-sm-4 col-md-3" data-src="img/thumb-3.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
           <a href="">
             <img class="img-responsive" src="img/thumb-3.jpg">
           </a>
         </li>
-        <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="img/4-375.jpg 375, img/4-480.jpg 480, img/4.jpg 800" data-src="img/thumb-4.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
+        <li class="col-xs-6 col-sm-4 col-md-3" data-src="img/thumb-4.jpg" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>">
           <a href="">
             <img class="img-responsive" src="img/thumb-4.jpg">
           </a>
         </li>
+
       </ul>
     </div>
     <script type="text/javascript">

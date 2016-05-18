@@ -10,14 +10,16 @@ angular.module('starter.controllers', [])
     $scope.data = {};
 
     $scope.login = function () {
-      LoginService.loginUser($scope.data.username, $scope.data.password).success(function (data) {
-        $state.go('match');
-      }).error(function (data) {
-        var alertPopup = $ionicPopup.alert({
-          title: '登录失败',
-          template: '输入的密码错误！请重新输入！'
+      LoginService.loginUser($scope.data.username, $scope.data.password)
+        .success(function (data) {
+          $state.go('match');
+        })
+        .error(function (data) {
+          var alertPopup = $ionicPopup.alert({
+            title: '登录失败',
+            template: '输入的密码错误！请重新输入！'
+          });
         });
-      });
     }
   })
 

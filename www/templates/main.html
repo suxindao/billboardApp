@@ -29,7 +29,7 @@
                 </li>-->
         <li lightgallery ng-repeat="photo in data.photos" data-src="{{photo.fullres}}" data-sub-html="{{photo.message}}">
           <a href="">
-            <img class="img-responsive" src="{{photo.thumbnail}}">
+            <img class="img-responsive" ng-src="{{photo.thumbnail}}">
           </a>
         </li>
       </ul>
