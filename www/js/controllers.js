@@ -7,8 +7,7 @@
 angular.module('starter.controllers', [])
 
   .controller('LoginCtrl', function ($scope, LoginService, $ionicPopup, $state) {
-    $scope.data = {};
-
+    $scope.data = {username: "user", password: "111111"};
     $scope.login = function () {
       LoginService.loginUser($scope.data.username, $scope.data.password)
         .success(function (data) {
@@ -25,63 +24,129 @@ angular.module('starter.controllers', [])
 
   .controller('MatchCtrl', function ($scope, $state) {
     $scope.data = {
-      matchButton: {
-        hide: false
-      },
-      nextButton: {
-        hide: true
-      }
-
+      machineID: "3B4GdF7S3T",
+      showInputText: true
     };
 
     $scope.match = function () {
-      $scope.data.matchButton.hide = true;
-      $scope.data.nextButton.hide = false;
+      $scope.data.showInputText = false;
+    };
+
+    $scope.reMatch = function () {
+      $scope.data.showInputText = true;
     };
 
     $scope.goMainPage = function () {
       $state.go('main');
     };
-
   })
 
-  .controller('MainCtrl', function ($scope, $sce) {
+  .controller('MainCtrl', function ($scope, $ionicActionSheet, $timeout, $sce, $state) {
     //http://plnkr.co/edit/nntLVOV58NmXbmB6LcIB?p=preview
 
     $scope.data = {
       photos: [
         {
-          fullres: 'img/thumb-1.jpg',
-          thumbnail: 'img/thumb-1.jpg',
+          fullres: 'img/cS-1.jpg',
+          thumbnail: 'img/thumb/cS-1.jpg',
           message: "aaaa"
         },
         {
-          fullres: 'img/thumb-2.jpg',
-          thumbnail: 'img/thumb-2.jpg',
-          message: "bbb"
+          fullres: 'img/cS-2.jpg',
+          thumbnail: 'img/thumb/cS-2.jpg',
+          message: "aaaa"
         },
         {
-          fullres: 'img/thumb-3.jpg',
-          thumbnail: 'img/thumb-3.jpg',
-          message: "ccc"
+          fullres: 'img/cS-3.jpg',
+          thumbnail: 'img/thumb/cS-3.jpg',
+          message: "aaaa"
         },
         {
-          fullres: 'img/thumb-4.jpg',
-          thumbnail: 'img/thumb-4.jpg',
-          message: "dddd"
+          fullres: 'img/cS-4.jpg',
+          thumbnail: 'img/thumb/cS-4.jpg',
+          message: "aaaa"
+        },
+        {
+          fullres: 'img/cS-5.jpg',
+          thumbnail: 'img/thumb/cS-5.jpg',
+          message: "aaaa"
+        },
+        {
+          fullres: 'img/cS-6.jpg',
+          thumbnail: 'img/thumb/cS-6.jpg',
+          message: "aaaa"
+        },
+        {
+          fullres: 'img/cS-7.jpg',
+          thumbnail: 'img/thumb/cS-7.jpg',
+          message: "aaaa"
+        },
+        {
+          fullres: 'img/cS-8.jpg',
+          thumbnail: 'img/thumb/cS-8.jpg',
+          message: "aaaa"
+        },
+        {
+          fullres: 'img/cS-9.jpg',
+          thumbnail: 'img/thumb/cS-9.jpg',
+          message: "aaaa"
+        },
+        {
+          fullres: 'img/cS-10.jpg',
+          thumbnail: 'img/thumb/cS-10.jpg',
+          message: "aaaa"
         }
       ]
     };
-
     for (var i = 0; i < $scope.data.photos.length; i++) {
       $scope.data.photos[i].fullres = $sce.trustAsResourceUrl($scope.data.photos[i].fullres);
     }
 
+    $scope.showMenu = function () {
+      var hideSheet = $ionicActionSheet.show({
+        titleText: '操作',
+        buttons: [
+          {text: '立即发布'},
+          {text: '删除节目'}
+        ],
+        destructiveText: 'Delete',
+        cancelText: '取消编辑',
+        cancel: function () {
+          // add cancel code..
+        },
+        destructiveButtonClicked: function () {
+          alert("你确定要删除吗?");
+        },
+        buttonClicked: function (index) {
+          alert(index);
+          return true;
+        }
+      });
+      $timeout(function () {
+        hideSheet();
+      }, 2000);
+    };
+
+    $scope.userAccount = function () {
+      $state.go('account');
+    };
+
+
+//    $('#image-gallery').lightSlider({
+//      gallery: true,
+//      item: 1,
+//      thumbItem: 9,
+//      slideMargin: 0,
+//      speed: 500,
+//      auto: true,
+//      loop: true,
+//      onSliderLoad: function () {
+//        $('#image-gallery').removeClass('cS-hidden');
+//      }
+//    });
+
   })
 
-  .controller('AccounrCtrl', function ($scope, $state) {
+  .controller('AccountCtrl', function ($scope, $state) {
     $scope.data = {};
-
-  })
-
-  ;
+  });
